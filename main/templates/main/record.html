@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="container border border-primary p-4">
+    <h1 class="mb-4">Edit Record</h1>
+    {% if customer_record %}
+        <p><strong>Name:</strong> {{ customer_record.first_name }} {{ customer_record.last_name }}</p>
+        <p><strong>Email:</strong> {{ customer_record.email }}</p>
+        <p><strong>Phone:</strong> {{ customer_record.phone }}</p>
+        <p><strong>Address:</strong> {{ customer_record.address }}</p>
+        <p><strong>City:</strong> {{ customer_record.city }}</p>
+        <p><strong>State:</strong> {{ customer_record.state }}</p>
+        <p><strong>Zip Code:</strong> {{ customer_record.zip_code }}</p>
+        <p><strong>Created At:</strong> {{ customer_record.created_At }}</p>
+    {% endif %}
+    
+    <div class="mt-4">
+        <button class="btn btn-primary"><a href="{% url 'home' %}" class="text-white">Go back</a></button>
+        <button class="btn btn-danger"><a href="{% url 'delete_record' customer_record.id %}" class="text-white">Delete</a></button>
+        <button class="btn btn-success"><a href="{% url 'update_record' customer_record.id %}" class="text-white">Update record</a></button>
+    </div>
+</div>
+{% endblock %}

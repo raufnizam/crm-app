@@ -1,0 +1,44 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Update Record</h1>
+
+    <form action="" method="POST" class="mt-4">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{ form.first_name.label_tag }}
+            {{ form.first_name }}
+        </div>
+        <div class="mb-3">
+            {{ form.last_name.label_tag }}
+            {{ form.last_name }}
+        </div>
+        <div class="mb-3">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+        </div>
+        <div class="mb-3">
+            {{ form.phone.label_tag }}
+            {{ form.phone }}
+        </div>
+        <div class="mb-3">
+            {{ form.address.label_tag }}
+            {{ form.address }}
+        </div>
+        <div class="mb-3">
+            {{ form.city.label_tag }}
+            {{ form.city }}
+        </div>
+        <div class="mb-3">
+            {{ form.state.label_tag }}
+            {{ form.state }}
+        </div>
+        <div class="mb-3">
+            {{ form.zip_code.label_tag }}
+            {{ form.zip_code }}
+        </div>
+        <button class="btn btn-secondary" type="submit">Update Record</button>
+    </form>
+</div>
+{% endblock %}
